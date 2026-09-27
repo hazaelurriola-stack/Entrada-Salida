@@ -20,6 +20,7 @@ int main(){
     printf("Resultado 1 -> Nombre: %s, Edad: %d años\n\n", nombre_c, edad);
     //Limpieza obligatoria del búfer del teclado para los siguientes ejemplos
     int c; while (( c = getchar()) != '\n' && c != EOF);
+    
     // =========================================================================
     // BLOQUE 2: Estilo C seguro (fgets + puts)
     // =========================================================================
@@ -31,5 +32,20 @@ int main(){
     // Puts solo imprime texto plano, así que mostramos un mensaje fijo
     puts("Resultado 2 -> Nombre guardado de forma segura con fgets:");
     puts(nombre_c); // Nota: puts añade un salto de línea automático al final
+
+    // =========================================================================
+    // BLOQUE 3: Estilo C++ clásico (std::cin >> + std::cout)
+    // =========================================================================
+    // LIMITACIÓN DE LECTURA: Al igual que scanf, cin >> se detiene en el primer espacio.
+    std::cout << "--- [BLOQUE 3: cin + cout] ---\n";
+    std::cout << "Escribe un primer NOMBRE y EDAD para cin (ej: Ana 30): ";
+    std::cin >> nombre_cpp >> edad;
+    
+    // Salida encadenada clásica de C++ con el operador <<
+    std::cout << "Resultado 3 -> Nombre: " << nombre_cpp << ", Edad: " << edad << " anos\n\n";
+
+
+    // Limpieza del búfer de cin para que la siguiente lectura no se salte
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     return 0;
 }
