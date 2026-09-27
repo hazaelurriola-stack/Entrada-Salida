@@ -20,5 +20,16 @@ int main(){
     printf("Resultado 1 -> Nombre: %s, Edad: %d años\n\n", nombre_c, edad);
     //Limpieza obligatoria del búfer del teclado para los siguientes ejemplos
     int c; while (( c = getchar()) != '\n' && c != EOF);
+    // =========================================================================
+    // BLOQUE 2: Estilo C seguro (fgets + puts)
+    // =========================================================================
+    // VENTAJA: Permite espacios. LIMITACIÓN: Guarda el salto de línea al presionar Enter.
+    printf("--- [BLOQUE 2: fgets + puts] ---\n");
+    printf("Escribe NOMBRE COMPLETO para fgets: ");
+    fgets(nombre_c, 50, stdin); 
+    
+    // Puts solo imprime texto plano, así que mostramos un mensaje fijo
+    puts("Resultado 2 -> Nombre guardado de forma segura con fgets:");
+    puts(nombre_c); // Nota: puts añade un salto de línea automático al final
     return 0;
 }
