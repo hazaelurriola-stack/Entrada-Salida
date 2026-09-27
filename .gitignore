@@ -1,0 +1,12 @@
+# Ejecutables y archivos de enlace
+*.exe
+*.ilk
+
+# Archivos objeto y depuración
+*.obj
+*.pdb
+
+# Si usas Visual Studio, puedes ignorar sus carpetas ocultas
+.vs/
+out/
+build/
