@@ -47,5 +47,22 @@ int main(){
 
     // Limpieza del búfer de cin para que la siguiente lectura no se salte
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    // =========================================================================
+    // BLOQUE 4: El Estándar Moderno (std::getline + std::println de C++23)
+    // =========================================================================
+    // VENTAJA: Es el método recomendado en C++ para leer frases enteras de forma dinámica y segura.
+    std::println("--- [BLOQUE 4: std::getline + std::println (C++23)] ---");
+    std::print("Escribe NOMBRE COMPLETO y EDAD (Presiona Enter despues de cada uno):\n");
+    
+    std::print("Nombre: ");
+    std::getline(std::cin, nombre_cpp); // Lee toda la línea con espacios y expande la memoria sola
+    
+    std::print("Edad: ");
+    std::cin >> edad;
+
+    // Salida limpia y rápida de C++23 usando llaves de formato {}
+    std::println("Resultado 4 -> Nombre: {}, Edad: {} anos", nombre_cpp, edad);
+
     return 0;
 }
